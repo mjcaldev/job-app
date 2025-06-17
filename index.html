@@ -7,10 +7,14 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <button id="toggle-theme">Toggle Theme</button>
   <div class="container">
-    <form>
+    <form novalidate>
       <input type="text" id="name" name="name" placeholder="Full Name" required />
+      <small class="error" id="error-name"></small>
+
       <input type="email" id="email" name="email" placeholder="Email Address" required />
+      <small class="error" id="error-email"></small>
 
       <select id="position" name="position" required>
         <option value="" disabled selected>Select a position</option>
@@ -18,22 +22,36 @@
         <option value="backend">Backend Developer</option>
         <option value="designer">UI/UX Designer</option>
       </select>
+      <small class="error" id="error-position"></small>
 
       <fieldset class="radio-group">
         <legend>Availability</legend>
         <label>
           <input type="radio" name="availability" value="full-time" required />
-          Full-Time
+          <span>Full-Time</span>
         </label>
         <label>
           <input type="radio" name="availability" value="part-time" />
-          Part-Time
+          <span>Part-Time</span>
         </label>
       </fieldset>
 
       <textarea id="message" name="message" placeholder="Why should we hire you?" required></textarea>
+      <small class="error" id="error-message"></small>
+
       <button type="submit">Submit Application</button>
     </form>
   </div>
+
+  <!-- Modal -->
+  <div class="modal hidden" id="success-modal">
+    <div class="modal-content">
+      <h2>🎉 Application Submitted</h2>
+      <p>Thank you for applying! We'll be in touch soon.</p>
+      <button id="close-modal">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
