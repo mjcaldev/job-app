@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Job-app</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <h1>Job-app</h1>
-    <p>Welcome to the project.</p>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Application</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <form>
+      <input type="text" id="name" name="name" placeholder="Full Name" required />
+      <input type="email" id="email" name="email" placeholder="Email Address" required />
+
+      <select id="position" name="position" required>
+        <option value="" disabled selected>Select a position</option>
+        <option value="frontend">Frontend Developer</option>
+        <option value="backend">Backend Developer</option>
+        <option value="designer">UI/UX Designer</option>
+      </select>
+
+      <fieldset class="radio-group">
+        <legend>Availability</legend>
+        <label>
+          <input type="radio" name="availability" value="full-time" required />
+          Full-Time
+        </label>
+        <label>
+          <input type="radio" name="availability" value="part-time" />
+          Part-Time
+        </label>
+      </fieldset>
+
+      <textarea id="message" name="message" placeholder="Why should we hire you?" required></textarea>
+      <button type="submit">Submit Application</button>
+    </form>
+  </div>
+</body>
 </html>
